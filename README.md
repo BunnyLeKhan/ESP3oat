@@ -16,4 +16,14 @@ We want to thank you all for your support, especially our teachers followig us o
 
 Signed the ESP3oat, 
 
-Guillaume Frick - ENSISA - Automatic and embedded systems
+ENSISA - Automatic and embedded systems :
+- Guillaume Frick
+- Emile Homerin
+- Nathan Guihard
+
+INSA - Mecatronics : 
+- Charline Merck
+- Antoine Dauce
+- Alban Lopez
+
+
