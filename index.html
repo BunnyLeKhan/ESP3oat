@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP3oat BunnyBoatv3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body class="w3-animate-opacity">
+
+    <div class="w3-card w3-teal w3-padding-small w3-center">
+        <h1>ESP3oat BunnyBoatv3</h1>
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+        <h2>Export</h2>
+    </div>
+
+    <div class="w3-center w3-card w3-padding-24">
+        <button id="myDIV2" onclick="myFunction2()" class="w3-button  w3-teal  w3-round-xlarge w3-xlarge w3-ripple w3-wide" style="width:80%;"><span>ThingSpeak OFF</span></button><br><br>
+        <button id="myDIV3" onclick="myFunction3()" class="w3-button  w3-teal  w3-round-xlarge w3-xlarge w3-ripple w3-wide" style="width:80%;"><span>SD Card OFF</span></button>
+        <br>
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+        <h2>Navigation</h2>
+    </div>
+
+    <div class="w3-center w3-card w3-padding-small">
+        <h4 class="w3-padding">Headlight</h4>
+        <button onclick="onButton()" class="w3-button w3-green w3-round-xlarge w3-xlarge w3-ripple w3-wide" style="width:40%;">ON</button>
+        <button onclick="offButton()" class="w3-button w3-red w3-round-xlarge w3-xlarge w3-ripple w3-wide" style="width:40%;">OFF</button>
+        <br>
+        <h4 class="w3-padding">Driving mode</h4>
+        <button id="myDIV" onclick="myFunction()" class="w3-button w3-round-xlarge w3-teal w3-xlarge w3-ripple w3-wide" style="width:80%;">
+            <h2>MANUAL</h2>
+        </button>
+        <br>
+        <h4 class="w3-padding">Ultrasound distance</h4>
+        <p class="w3-xlarge"><span id="dsr">0</span></p>
+
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+        <h2>Data on board</h2>
+    </div>
+
+    <div class="w3-center w3-card w3-padding-24">
+        <button onclick="captureButton()" class="w3-button  w3-teal w3-round-xlarge w3-xlarge w3-ripple w3-wide" style="width:80%;"><span>CAPTURE</span></button>
+        <br><br>
+        <div class="card-grid">
+            <div class="card">
+                <p class="card-title">Temperature</p>
+                <canvas id="gauge-temperature"></canvas>
+            </div>
+            <div class="card">
+                <p class="card-title">Air humidity</p>
+                <canvas id="gauge-humidity"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+        <h2>Data sub board</h2>
+    </div>
+
+    <div class="w3-center w3-card w3-padding-24">
+        <button onclick="" class="w3-button  w3-teal w3-round-xlarge w3-xlarge w3-ripple w3-wide" style="width:80%;"><span>WATER SAMPLING</span></button>
+        <br>
+        <h4 class="w3-padding">pH</h4><br>
+        <h4 class="w3-padding">Sonar</h4>
+        <p class="w3-xlarge"><span id="sgd">0</span></p><br>
+        <h4 class="w3-padding">Hydraulic pump and reservoir</h4><br>
+    </div>
+
+    <div class=" w3-center w3-card w3-padding-24 w3-container w3-teal" ">
+        <h3 class="w3-padding">Usefull links</h3>
+        <i><a href="https://thingspeak.com/channels/1651525" style="text-decoration: none;">Channel ThingSpeak</a></i> <br>
+        <i><a href="https://www.trirhenatech.eu/fr/formation/trinatronics/" style="text-decoration: none;">Trinatronisc 2022</a></i><br>
+        <i><a href="https://www.ensisa.uha.fr/" style="text-decoration: none;">ENSISA</a></i><br><br>
+        <i>signed by ESP3oat crew</i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
