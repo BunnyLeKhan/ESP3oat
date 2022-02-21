@@ -20,10 +20,8 @@
 
 
 // Wifi  -----------------------------------
-//const char* ssid = "Samsung Guillaume";
-//const char* password = "Bunnylekhan";
-const char *ssid = "Livebox-F220";
-const char *password = "JAnopadANK4nk4go72";
+const char *ssid = "yourssid";
+const char *password = "yourpassworld";
 WiFiClient  client;
 const int led = 2; // pin led for Highlights
 
