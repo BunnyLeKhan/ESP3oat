@@ -27,8 +27,8 @@ const int led = 2; // pin led for Highlights
 
 
 // Thing Speak  -----------------------------------
-unsigned long myChannelNumber = 1651525;
-const char * myWriteAPIKey = "2ZI76GJ5Q1ZZL07C";
+unsigned long myChannelNumber = 000000;
+const char * myWriteAPIKey = "APIKey";
 int a = 0;
 
 
