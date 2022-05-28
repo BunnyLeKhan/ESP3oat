@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        ESP3OAT
+    </title>
+    <meta name="viewport" content="width=device-width,content=" user-scalable=no", initial-scale="1" charset='UFT-8' />
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+
+    <div class="w3-card w3-padding-small w3-center w3-light-grey">
+        <h6>ESP3oat v3</h6>
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+        <h3> Automatic Mode </h3>
+    </div>
+
+    <br />
+
+    <div class="w3-center w3-card">
+        <h5 class="w3-padding">Enter course</h5>
+        <button onclick="Coord()" class="w3-button w3-teal w3-round-medium w3-medium w3-ripple" style="width:40%;">With a file</button>
+        <a href="CaptureGPS.html" class="w3-button w3-round-medium w3-teal w3-medium w3-ripple" style="width:40%;">
+            Manually
+        </a>
+        <br /><br />
+    </div>
+
+    <br />
+
+    <div class="w3-center w3-card">
+        <h5 class="w3-padding">Set coefficients</h5>
+        &emsp; P :
+        <input type="text" id="Kp" size="10" placeholder="ex : 1.0" style="text-align: center;">
+        &emsp; I :
+        <input type="text" id="Ki" size="10" placeholder="ex : 2.0" style="text-align: center;">
+        &emsp; D :
+        <input type="text" id="Kd" size="10" placeholder="ex : 3.0" style="text-align: center;">
+        <br /><br />
+        <button onclick="SavePID()" class="w3-button w3-teal w3-round-medium w3-medium w3-ripple w3-wide" style="width:30%;">SAVE</button>
+        <br /><br />
+    </div>
+
+    <br />
+
+    <div class="w3-center w3-card">
+        <h5 class="w3-padding">Enter course</h5>
+        <button onclick="AutoStart()" class="w3-button w3-green w3-round-medium w3-medium w3-ripple w3-wide" style="width:40%;">START</button>
+        <button onclick="AutoStop()" class="w3-button w3-red w3-round-medium w3-medium w3-ripple w3-wide" style="width:40%;">STOP</button>
+        <br /><br />
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        ESP3OAT
+    </title>
+    <meta name="viewport" content="width=device-width,content=" user-scalable=no", initial-scale=1" charset='UFT-8' />
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="script-manual.js"></script>
+</head>
+
+
+<body scroll="no" style="overflow: hidden;position: fixed">
+
+    <div class="w3-card w3-padding-small w3-center w3-light-grey">
+        <h6>ESP3oat v3</h6>
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+        <h3> Manual Mode </h3>
+    </div>
+
+    <div class="w3-margin w3-center w3-card">
+        <h5 class="w3-padding"> Data </h5>
+        X : <span id="x_coordinate"> </span>
+        <span STYLE="padding:0 0 0 100px;"></span>
+        Y : <span id="y_coordinate"> </span><br />
+        Speed : <span id="speed"> </span> %
+        <span STYLE="padding:0 0 0 50px;"></span>
+        Angle : <span id="angle"> </span>
+        <br><br>
+    </div>
+
+    <canvas id="canvas" name="game"></canvas>
+
+</body>
+
+</html>

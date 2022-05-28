@@ -1,0 +1,259 @@
+﻿ <!DOCTYPE html>
+ <html>
+
+ <head>
+
+     <title>ESP3oat</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1,content=">
+     <link rel="icon" type="image/png" href="Logo.PNG">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+     <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <link rel="stylesheet" type="text/css" href="w3.css">
+     <script type="text/javascript" src="script.js"></script>
+     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+     <script src="https://code.highcharts.com/highcharts.js"></script>
+     <style>
+         body {
+             font-family: 'Lato', sans-serif;
+         }
+
+         img {
+             vertical-align: middle;
+         }
+
+
+         .overlay {
+             height: 100%;
+             width: 0;
+             position: fixed;
+             z-index: 1;
+             top: 0;
+             left: 0;
+             background-color: rgb(0,0,0);
+             background-color: rgba(0,0,0, 0.9);
+             overflow-x: hidden;
+             transition: 0.5s;
+         }
+
+         .overlay-content {
+             position: relative;
+             top: 25%;
+             width: 100%;
+             text-align: center;
+             margin-top: 30px;
+         }
+
+         .overlay a {
+             padding: 8px;
+             text-decoration: none;
+             font-size: 36px;
+             color: #818181;
+             display: block;
+             transition: 0.3s;
+         }
+
+             .overlay a:hover, .overlay a:focus {
+                 color: #f1f1f1;
+             }
+
+         .overlay .closebtn {
+             position: absolute;
+             top: 20px;
+             right: 45px;
+             font-size: 60px;
+         }
+     </style>
+ </head>
+
+ <body class="w3-animate-opacity">
+
+     <div id="myNav" class="overlay">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <div class="overlay-content">
+             <a href="https://www.trirhenatech.eu/fr/formation/trinatronics/" style="text-decoration: none;">Trinatronics 2022</a><br />
+             <a href="https://www.ensisa.uha.fr/" style="text-decoration: none;">ENSISA</a><br>
+             <a href="https://www.insa-strasbourg.fr/fr/" style="text-decoration: none;">INSA</a><br>
+             <a href="https://github.com/BunnyLeKhan/ESP3oat" style="text-decoration: none;">Github</a><br>
+             <a href="https://www.youtube.com/channel/UCYoelMv4y35A9dw4qPC34gg" style="text-decoration: none;">YouTube</a><br />
+         </div>
+     </div>
+
+     <span style="font-size:26px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+     <img src="a.jpg" style="width:100%">
+
+     <div class="w3-card w3-dark-grey w3-padding-small w3-center">
+         <h3>ESP3oat v3</h3>
+     </div>
+
+     <div class="card">
+         <h5 class="w3-padding">Battery</h5>
+
+         <label for="batBoat">Boat : &emsp;&emsp;&emsp;</label>
+         <span id="batBoat">
+             <meter value="0" min="0" max="100" id="bat_boat2"></meter>&emsp;<span id="bat_boat">0</span><span> </span><span> %</span>
+         </span>
+         <br />
+         <label for="batContr">Controller : &emsp;</label>
+         <span id="batContr">
+             <meter value="0" min="0" max="100" id="bat_cont2"></meter>&emsp;<span id="bat_cont">0</span><span> </span><span> %</span>
+         </span>
+         <br /><br />
+     </div>
+
+
+     <!--<div class="w3-card w3-padding-small w3-center w3-light-grey">
+        <h6>esp3oat v1</h6>
+    </div>-->
+     <div class="w3-center w3-card">
+         <h5 class="w3-padding">Driving mode</h5>
+         <a onclick="myFunction()" href="ManualMode.html" class="w3-button w3-round-medium w3-teal w3-medium w3-ripple " style="width:40%;">
+             MANUAL
+         </a>
+         <a onclick="myFunction5()" href="AutomaticMode.html" class="w3-button w3-round-medium w3-teal w3-medium w3-ripple" style="width:40%;">
+             AUTOMATIC
+         </a>
+         <br><br>
+     </div>
+
+     <!--<div class="w3-margin w3-center w3-card">
+        <h5 class="w3-padding">Data</h5>
+        <a href="DataOnBoard.html" class="w3-button w3-round-medium w3-teal w3-medium w3-ripple" style="width:40%;">
+            ON BOARD
+        </a>
+        <a href="DataSubBoard.html" class="w3-button w3-round-medium w3-teal w3-medium w3-ripple" style="width:40%;">
+            SUB BOARD
+        </a>
+        <br><br>
+    </div>-->
+
+     <div class="w3-center w3-card">
+         <h5 class="w3-padding">Export</h5>
+         <!--<a href="CarteSD.html" class="w3-button  w3-teal w3-round-medium w3-medium w3-ripple" style="width:80%;">
+        Carte SD
+        </a>-->
+         <a href="Data.txt" class="w3-button w3-teal w3-round-medium w3-medium w3-ripple" style="width:80%;" download="Data">DOWNLOAD DATA</a>
+         <br><br>
+     </div>
+
+     <div class="w3-center w3-card">
+         <h5 class="w3-padding">Device</h5>
+         <a href="http://192.168.138.1/webserial" class="w3-button w3-teal w3-round-medium w3-medium w3-ripple" style="width:80%;">WEB SERIAL</a><br />
+         <br><br>
+     </div>
+
+     <div style="text-align:center">
+         <span class="dot" onclick="currentSlide(1)"></span>
+         <span class="dot" onclick="currentSlide(2)"></span>
+         <span class="dot" onclick="currentSlide(3)"></span>
+     </div>
+
+     <div class="w3-center w3-card">
+         <h5 class="w3-padding">Headlights</h5>
+         <button onclick="onButton()" class="w3-button w3-green w3-round-medium w3-medium w3-ripple w3-wide" style="width:40%;">ON</button>
+         <button onclick="offButton()" class="w3-button w3-red w3-round-medium w3-medium w3-ripple w3-wide" style="width:40%;">OFF</button>
+         <br><br>
+     </div>
+
+     <div class="w3-center w3-card">
+         <!--<button onclick="captureButton()" class="w3-button  w3-teal w3-round-medium w3-medium w3-ripple w3-wide" style="width:80%;"><span>CAPTURE</span></button>
+        <br><br>-->
+         <h5 class="w3-padding">Data on and sub board </h5>
+         <div class="card-grid">
+             <div class="card">
+                 <p class="card-title">Temperature</p>
+                 <canvas id="gauge-temperature"></canvas>
+             </div>
+             <div class="card">
+                 <p class="card-title">Air humidity</p>
+                 <canvas id="gauge-humidity"></canvas>
+             </div>
+             <!--<div class="card">
+               <p class="card-title">Compass</p>
+            </div>-->
+             <!-- <label for="wire3">North relative angle : </label>&nbsp;
+            <span id="wire3">
+                <span id="wire">0</span><span> </span><span> °</span> <br /> <meter value="0" min="0" max="359" id="wire2"></meter>
+            </span>
+            <br />
+             <label for="dsr3">Ultrasound distance : </label>&nbsp;
+             <span id="dsr3">
+                 <span id="dsr">0</span><span> </span><span> cm</span> <br />  <meter value="0000" min="0" max="400" id="dsr2"></meter>
+             </span>
+             <br />
+             <label for="sgd3">Sonar distance : </label>&nbsp;
+             <span id="sgd3">
+                 <span id="sgd">0</span><span> </span><span> cm</span> <br /> <meter value="0" min="0" max="1000" id="sgd2"></meter>
+             </span>
+             <br />
+             <label for="comp3">Compass : </label>&nbsp;
+             <span id="comp3">
+                 <span id="comp">0</span><span> </span><span> °</span> <br />  <meter value="0000" min="0" max="359" id="comp2"></meter>
+             </span>
+             <br />-->
+
+         </div><br />
+         <!--<h6 class="w3-padding">North relative angle</h6>
+        <p class="w3-medium"><span id="wire">0</span></p>-->
+         <br />
+     </div>
+
+     <!--<div class="w3-center w3-card">
+        <br />
+        <h5 class="w3-padding">Hydraulic pump and reservoir</h5>
+        <button onclick="captureButtonWS()" class="w3-button  w3-teal w3-round-medium w3-medium w3-ripple w3-wide" style="width:80%;"><span>WATER SAMPLING</span></button>
+        <br><br>
+    </div>-->
+     <!--<div class="w3-margin w3-center w3-card">-->
+     <!--<br />
+    <button onclick="captureButtonSub()" class="w3-button  w3-teal w3-round-medium w3-medium w3-ripple w3-wide" style="width:80%;"><span>CAPTURE SUB</span></button>
+    <br><br>-->
+     <!--<h5 class="w3-padding">pH</h5><br>-->
+     <!--</div>-->
+
+
+     <div class="content">
+         <div class="card-grid">
+             <div class="card">
+                 <p class="card-title">Temperature & Humidite</p>
+                 <div id="chart-temperature" class="chart-container"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="content">
+         <div class="card-grid">
+             <div class="card">
+                 <p class="card-title">Course</p>
+                 <div id="chart-course" class="chart-container"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="content">
+         <div class="card-grid">
+             <div class="card">
+                 <p class="card-title">Depth</p>
+                 <div id="chart-profondeur" class="chart-container"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="content">
+         <div class="card-grid">
+             <div class="card">
+                 <p class="card-title">Speed</p>
+                 <div id="chart-vitesse" class="chart-container"></div>
+             </div>
+         </div>
+     </div>
+
+     <button onclick="logoutButton()">Logout</button>
+     <br /><br />
+
+     <script src="script.js"></script>
+
+ </body>
+ </html>
